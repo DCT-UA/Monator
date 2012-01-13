@@ -1,0 +1,45 @@
+﻿@model DCT.Monitor.Server.Models.AccountModel
+@using DCT.Monitor.Server.Helpers
+
+@using (Html.BeginForm("Logon", "Account", FormMethod.Post, new { @class = "form", name = "form" }))
+{
+    <fieldset class="signin">
+		<div class="field">
+			<div class="error">
+				@Html.ValidationMessageFor( m => m.LogonModel)
+			</div>
+		</div>
+        <div class="field">
+            <label>
+                Enter your User Name
+            </label>
+            <div class="border">
+                @Html.TextBoxFor(m => m.LogonModel.UserName, new { Class = "short" })
+            </div>
+			<div class="error">
+				@Html.ValidationMessageFor( m => m.LogonModel.UserName)
+			</div>
+        </div>
+        <div class="field">
+            <label>
+                Enter your Password </label>
+            <div class="border">
+                @Html.PasswordFor(m => m.LogonModel.Password, new { Class = "short" })
+            </div>
+			<div class="error">
+				@Html.ValidationMessageFor( m => m.LogonModel.Password)
+			</div>
+        </div>
+        @Html.Hidden("ProviderId")
+        @Html.Hidden("ProviderUserId")
+        <div class="info">
+            <label for="termsaccept">
+				@Url.RetrivePassword().AsLink("Forgot your password?")
+            </label>
+        </div>
+        <div class="buttons">
+            <input type="button" class="button grey back" value="Back" />
+            <input type="submit" class="button orange" value="Sign in" id="buttonsignin" />
+        </div>
+    </fieldset>
+}

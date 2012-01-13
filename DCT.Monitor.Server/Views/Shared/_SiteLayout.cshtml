@@ -1,0 +1,38 @@
+﻿@using Skyner.Server.Controllers
+@using Skyner.Server.Helpers
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+	<title>Monator - Site Monitoring Service - @ViewBag.Title</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="/Content/Monator.ico" type="image/x-icon" rel="icon" />
+	<link href="@Url.Content("~/Content/style_new.css")" type="text/css" rel="stylesheet" />
+	<script src="/Scripts/jquery-1.4.4.js" type="text/javascript" language="javascript" ></script>	
+	<script src="/Scripts/jquery-ui.js" type="text/javascript"></script>
+	<script src="/Scripts/myajax.js" type="text/javascript"></script>
+	<script src="/Scripts/Cookies.js" type="text/javascript"></script>
+	<script src="/Service/Script.js?siteId=@BaseController.SelfSiteId" type="text/javascript"></script>
+	
+	<script src="/Scripts/jquery.zclip.js" type="text/javascript"></script>
+	<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
+	<script type="text/javascript">
+		FB.init("@Skyner.Server.Extensions.Constants.FacebookApplicationKey", "Facebook"); 
+	</script>
+</head>
+<body>
+<div class="infoSite">
+	<div class="verticalMenu">
+		<ul>
+			<li>@Url.Sites().AsLink("Viewing of your domains")</li>
+			<li><br /></li>
+			<li>@Url.ChangePassword().AsLink("Change password")</li>
+			<li><br /></li>
+			<li>@Url.AccountBinding().AsLink("Change your social binding")</li>
+		</ul>
+	</div>
+	<div class="siteGrid">
+	</div>
+</div>
+</body>

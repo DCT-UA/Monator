@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+					xmlns:mydata="clr-namespace:Inetgiant.Monitor.Client"
+					xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" 
+					xmlns:mvcc="clr-namespace:DCT.WPF.MVC.Controls;assembly=DCT.WPF"
+					xmlns:models="clr-namespace:Inetgiant.Monitor.Client.Models"
+					xmlns:views="clr-namespace:Inetgiant.Monitor.Client.Views">
+	
+</ResourceDictionary>

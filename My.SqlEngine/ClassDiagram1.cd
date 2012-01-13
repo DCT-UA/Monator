@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SqlEngine.AutoLoader&lt;TData&gt;">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAQEAAAAAAAAAAAAAAAAAAAAEAKAAAAAAE=</HashCode>
+      <FileName>AutoLoader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SqlEngine.IDataLoader&lt;TData&gt;">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IDataLoader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SqlEngine.LogWrapper" Collapsed="true">
+    <Position X="4" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAIAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>LogWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SqlEngine.Sql">
+    <Position X="2.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAEAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sql.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SqlEngine.SqlDataReaderExtension">
+    <Position X="4" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>SqlDataReaderExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SqlEngine.StoredProc">
+    <Position X="6" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAIAEAAAAAAACSITAAABAAAAAAIEAAJAAAgAAAAAAA=</HashCode>
+      <FileName>StoredProc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SqlEngine.ILogger">
+    <Position X="4" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ILogger.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SqlEngine.ISqlConnector">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ISqlConnector.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

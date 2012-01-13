@@ -1,0 +1,72 @@
+﻿@model DCT.Monitor.Server.Models.AccountModel
+@using DCT.Monitor.Server.Helpers
+
+
+@{
+    var providerId = Convert.ToInt32(ViewData["ProviderId"]);
+    if (providerId != 1 && providerId != null)
+    {
+@* <div>The binding will be added to your profile automatically!</div>*@
+    }
+}
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post/*, new { @class = "form", name = "form" }*/))
+{
+    <fieldset class="signup">
+        <div class="field">
+            <label>
+                User Name </label>
+            <div class="border">
+                @Html.TextBoxFor(m => m.RegisterModel.UserName, new { Class = "short" })
+                
+            </div>
+			<div class="error">
+				@Html.ValidationMessageFor(m => m.RegisterModel.UserName)<br />
+			</div>
+        </div>
+        <div class="field">
+            <label>
+                Email </label>
+            <div class="border">
+                @Html.TextBoxFor(m => m.RegisterModel.Email, new { Class = "short" })
+            </div>
+			<div class="error">
+				@Html.ValidationMessageFor(m => m.RegisterModel.Email)<br />
+			</div>
+        </div>
+        <div class="field">
+            <label>
+                Password </label>
+            <div class="border">
+                @Html.PasswordFor(m => m.RegisterModel.Password, new { Class = "short" })
+            </div>
+			<div class="error">
+				@Html.ValidationMessageFor(m => m.RegisterModel.Password)<br />
+			</div>
+        </div>
+        <div class="field">
+            <label>
+                Confirm password</label>
+            <div class="border">
+                @Html.PasswordFor(m => m.RegisterModel.ConfirmPassword, new { Class = "short" })
+                
+            </div>
+			<div class="error">
+				@Html.ValidationMessageFor(m => m.RegisterModel.ConfirmPassword)<br />
+				
+			</div>
+        </div>
+
+        @Html.Hidden("ProviderId")
+        @Html.Hidden("ProviderUserId")
+        @*<div class="info">
+		<input type="checkbox" id="termsaccept" />
+		<label for="termsaccept">I accept Monator's <a target="_blank" href="/terms">Terms of Service</a></label>
+		</div>*@
+		<div>@Html.ValidationMessageFor(m => m.RegisterModel)</div>
+        <div class="buttons">
+            <input type="button" class="button grey back" value="Back" />
+            <input type="submit" class="button orange" value="Sign up" id="buttonsignup" />
+        </div>
+    </fieldset>
+}

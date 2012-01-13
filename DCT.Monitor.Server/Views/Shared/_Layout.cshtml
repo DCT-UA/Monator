@@ -1,0 +1,164 @@
+﻿@using DCT.Monitor.Server.Controllers
+@using DCT.Monitor.Server.Helpers
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+	<title>Monator - Site Monitoring Service - @ViewBag.Title</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="/Content/Monator.ico" type="image/x-icon" rel="icon" />
+	<link href="@Url.Content("~/Content/style_new.css")" type="text/css" rel="stylesheet" />
+	<link href="@Url.Content("~/Content/themes/ui-lightness/jquery-ui-1.7.2.custom.css")" type="text/css" rel="stylesheet" />
+	<script src="/Scripts/jquery-1.5.1.min.js" type="text/javascript" language="javascript" ></script>	
+	<script src="/Scripts/jquery-ui-1.8.13.custom.min.js" type="text/javascript"></script>
+	<script src="/Scripts/myajax.js" type="text/javascript"></script>
+	<script src="/Scripts/Cookies.js" type="text/javascript"></script>
+
+	<script src="/Scripts/jquery.zclip.js" type="text/javascript"></script>
+	@if (!Request.Url.Host.Contains("all"))
+ {
+	<script type="text/javascript">
+
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-15461238-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function () {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+	'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+
+	</script>
+ }
+	<script type="text/javascript">
+		(function () {
+			var m = document.createElement('script'); m.type = 'text/javascript'; m.async = true;
+			m.src = 'http://@(Request.Url.Host)/service?siteid=@(BaseController.SelfSiteId)';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(m, s);
+		})();
+	</script>
+
+@*	<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
+	<script type="text/javascript">
+		FB.init("@Skyner.Server.Extensions.Constants.FacebookApplicationKey", "Facebook"); 
+	</script>*@
+</head>
+<body>
+@{
+	string menuItem = ViewBag.CurrentMenuItem;
+	if (string.IsNullOrEmpty(menuItem)){ 
+		menuItem = "home";
+	}
+}
+
+<div id="wrapper">
+	<div id="logo">
+		<a title="Skyner Systems" href="@Url.Home().AsUrl()">
+			<img src="@Url.Content("~/Content/img/logo-beta.png")" alt="Logo" />
+		</a>
+	</div>
+	<div id="authorisation">
+		@{Html.RenderPartial("HeaderContent");}
+	</div>
+	<div id="menu">
+		<ul>
+			<li>@Url.Home().AsLink("Home", menuItem == "home" ? "home current" : "home")</li>
+			@if (Request.IsAuthenticated)
+            {
+                <li>@Url.MyHome().AsLink("My home", menuItem == "myhome" ? "myhome current" : "myhome")</li>
+            }
+            <li>@Url.Downloads().AsLink("Downloads", menuItem == "downloads" ? "downloads current" : "downloads")</li>
+			<li>@Url.Faq().AsLink("FAQ", menuItem == "faq" ? "current faq" : "faq")</li>
+			<li>@Url.ContactUs().AsLink("Contact us", menuItem == "contact" ? "contact current" : "contact")</li>
+		</ul>
+	</div>
+	
+		@RenderBody()
+
+	@RenderSection("FooterSection", false)
+	<div id="footer">
+		<div class="menu">
+			<ul>
+			<li><a href="@Url.Home().AsUrl()" class="home current">Home</a> | </li>
+			<li><a href="@Url.MyHome().AsUrl()" class="products">My home</a> | </li>
+			<li><a href="@Url.Downloads().AsUrl()" class="company">Downloads</a> | </li>
+			<li><a href="@Url.Faq().AsUrl()" class="support">FAQ</a> | </li>
+			<li><a href="@Url.ContactUs().AsUrl()" class="contact">Contact us</a></li>
+			</ul>
+		</div>
+		<p class="copyright">Copyright &copy; 2011 <a href="#"><img src="@Url.Content("~/Content/img/dct-logo.png")" alt="" /></a></p>
+	</div>
+</div>
+<style type="text/css">
+#footer {
+	padding: 15px;
+	border-top: 5px solid #64a6be;
+	
+	background: #ffffff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#eeeeee));
+	background: -moz-linear-gradient(top, #ffffff, #eeeeee);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eeeeee');
+	
+	overflow: hidden;
+}
+#footer .menu {
+}
+#footer .menu ul {
+	float: left;
+}
+#footer .menu ul li {
+	color: #888;
+	display: inline;
+}
+#footer .menu ul li a {
+	color: #666;
+}
+#footer .copyright {
+	float: right;
+}
+</style>
+
+<style type="text/css">
+#blocks {
+}
+#blocks ul {
+	overflow: hidden;
+	padding: 5px;
+}
+#blocks ul li {
+	width: 465px;
+	margin: 15px;
+	padding: 10px 0;
+	background: #fff;
+
+	-moz-box-shadow: inset 0 0 5px #666;
+	-webkit-box-shadow: inset 0 0 5px #666;
+	box-shadow: inset 0 0 5px #666;
+
+	float: left;
+}
+
+#blocks ul li h2 {
+	padding: 5px 15px;
+}
+#blocks ul li h2 a {}
+#blocks ul li p {
+	padding: 0px 15px;
+}
+#blocks ul li p.more {
+	padding: 0 15px;
+	text-align: right;
+}
+#blocks ul li p.more a {
+	color: #64a6be;
+	text-decoration: underline;
+	padding-right: 20px;		
+}
+  </style>
+</body>
+</html>

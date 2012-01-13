@@ -1,0 +1,43 @@
+﻿@using DCT.Monitor.Server.Helpers
+@model DCT.Monitor.Server.Models.SiteListModel
+@{
+	ViewBag.Title = "MyHome";
+}
+
+<div id="form" class="singleSite">
+<fieldset class="signin">
+		@if (Model.Sites == null || Model.Sites.Count == 0)
+		{
+			<div>Your domain list is empty!</div>
+		}
+		else
+		{
+			<table>
+				<tr>
+					<th><label>Site's Domain:</label></th>
+					<th><label>Script link</label></th>
+					<th>Copy script link</th>
+					<th><label>Delete domain</label></th>
+				</tr>
+			    @foreach (var site in Model.Sites)
+				{
+					var id = site.Id + "_input";
+					<tr>
+					
+						<td class="text">@site.Domain</td>
+						<td id="tdbox" class="scriptText + @site.Domain">
+							<div class="fieldBox">
+								<div class="border">
+									@Html.TextBox(id, Url.StringScript(site.Id.ToString()), new {id, Class="script"} )
+								</div>
+							</div>
+						</td>
+						<td class="text"><button id="@(site.Id)" type="button" class="copy-dynamic">Copy</button></td>
+						@*<td><a id="@(site.Id)" class="copy-dynamic" href="#">Copy script</a></td>*@															  
+						<td class="text">@Url.DeleteSite(site).AsLinkButton("Delete", "delete", "blue button")</td>
+					</tr>
+				}
+			</table>
+		}    
+</fieldset>
+</div>

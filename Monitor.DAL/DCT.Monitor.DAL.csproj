@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{345BE8E2-23EA-4197-91DC-5404031110D9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Monitor.DAL</RootNamespace>
+    <AssemblyName>Monitor.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DCT, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\DCTLIB\DCT.dll</HintPath>
+    </Reference>
+    <Reference Include="DCT.Unity">
+      <HintPath>..\Libraries\DCTLIB\DCT.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseRepository.cs" />
+    <Compile Include="DummiRepository.cs" />
+    <Compile Include="FullCachedRepository.cs" />
+    <Compile Include="IBaseRepository.cs" />
+    <Compile Include="ICacheRepository.cs" />
+    <Compile Include="IGeolocationRepository.cs" />
+    <Compile Include="Implementation\Geolocations\MsSqlGeolocationRepository.cs" />
+    <Compile Include="Implementation\Pages\MsSqlPageRepository.cs" />
+    <Compile Include="Implementation\Requests\MsSqlRequestRepository.cs" />
+    <Compile Include="Implementation\Sites\MsSqlSiteRepository.cs" />
+    <Compile Include="Implementation\Providers\MsSqlProviderRepository.cs" />
+    <Compile Include="Implementation\Users\MsSqlUserRepository.cs" />
+    <Compile Include="IPageRepository.cs" />
+    <Compile Include="IProviderRepository.cs" />
+    <Compile Include="ISiteRepository.cs" />
+    <Compile Include="IStatisticRepository.cs" />
+    <Compile Include="IUserRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DCT.Monitor.Adapters\DCT.StreamInsight.Observable.csproj">
+      <Project>{690B9259-C2DF-4F3D-88D4-53399FBD27D6}</Project>
+      <Name>DCT.StreamInsight.Observable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DCT.Monitor.EventTypes\DCT.Monitor.Entities.csproj">
+      <Project>{CBD3B37B-5F59-49A1-9571-48C49B32B07C}</Project>
+      <Name>DCT.Monitor.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\My.SqlEngine\SqlEngine.csproj">
+      <Project>{678A0EF3-5E18-4CF1-8A39-A7BF200BB43D}</Project>
+      <Name>SqlEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

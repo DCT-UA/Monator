@@ -1,0 +1,47 @@
+﻿@using DCT.Monitor.Server.Helpers;
+@using DCT.Monitor.Server.Models
+
+@model ContactUsModel
+@{
+	ViewBag.Title = "ContactUs";
+	ViewBag.CurrentMenuItem = "contact";
+}
+
+<div id="info">
+<div id="form" class="single" style="margin-left:101px;width:661px">
+<fieldset class="signin">
+<p>Contact us.</p>
+@*@Html.ValidationSummary("ContactUsError")*@
+@using (Html.BeginRouteForm( "ContactUs", FormMethod.Post))
+{
+@*	@Html.ValidationSummary();*@
+	<div class="field">
+		<label for="useremail" class="contact">E-mail: </label>
+		<div class="border">
+			@Html.TextBoxFor(m => m.UserEmail, new { Class = "short" })
+		</div>
+		<div class="error">
+			@Html.ValidationMessageFor(m => m.UserEmail)
+		</div>
+	</div>
+	<div class="field">
+		<label for="message" class="contact">Message: </label>
+		<div class="border">
+			@Html.TextAreaFor(m => m.Message, new { Class = "short", style = "height:150px;width:460px", cols  = 40, rows = 40})
+			<div style = "height:25px; width:25px; position: absolute; right: 0px; bottom: 0px;  margin-left: 435px; margin-top: -25px;
+				position: relative;"></div>
+		</div>
+		<div class="error">
+			@Html.ValidationMessageFor(m => m.Message)
+		</div>
+	</div>
+	<div class="buttons">
+		<input type="submit" class="button blue" value="Send"/>
+	</div>
+}
+</fieldset>
+</div>
+</div>
+
+
+

@@ -1,0 +1,30 @@
+﻿@{
+	Layout = null;  
+}
+@model DCT.Monitor.Server.Models.SiteListModel
+
+@using (Html.BeginForm("EditSite", "SiteManager", FormMethod.Post))
+{
+	<div class="fieldBox">
+		<label for="domain">Site's Domain:</label>
+		<div class="border">
+			@Html.TextBoxFor(m => m.SiteModel.Domain, new { Class = "edit" })
+		</div>
+		<div class="error">
+			@Html.ValidationMessageFor(m => m.SiteModel.Domain)
+		</div>
+	</div>
+	<br />
+	//TODO: Traking
+@*	<div class="fieldBox">
+		<label for="domain">Track subdomains?</label>
+		@Html.CheckBoxFor(m => m.SiteModel.IgnoreSubdomains)
+	</div>*@
+	<div class="fieldBox">
+		<div class="error">
+		<p class="validateTips"></p>
+			@Html.ValidationMessageFor(m => m.SiteModel )
+		</div>
+	</div>
+	@Html.HiddenFor(m => m.SiteModel.Id);
+}

@@ -1,0 +1,151 @@
+----------------------------------------
+Timestamp: 10.01.2012 16:24:43
+
+Message: Start App
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10.01.2012 16:24:43
+
+Message: System.Web.HttpCompileException (0x80004005): d:\Projects\tfs-monator - копия\Monator\DCT.Monitor.Server\Views\Account\LogOn.cshtml(57): error CS0433: The type 'DCT.Monitor.Modules.Implementation.ProviderModule.ProviderModule' exists in both 'c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\root\15d12187\4d8c2ae6\assembly\dl3\b2f77bb7\205e8dad_76cfcc01\Inetgiant.Monitor.Modules.Implementation.DLL' and 'c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\root\15d12187\4d8c2ae6\assembly\dl3\518a2c76\30be4141_b4cfcc01\DCT.Monitor.Modules.Implementation.DLL'
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.FileExists(String virtualPath)
+   at System.Web.Mvc.VirtualPathProviderViewEngine.GetPathFromGeneralName(ControllerContext controllerContext, List`1 locations, String name, String controllerName, String areaName, String cacheKey, String[]& searchedLocations)
+   at System.Web.Mvc.VirtualPathProviderViewEngine.GetPath(ControllerContext controllerContext, String[] locations, String[] areaLocations, String locationsPropertyName, String name, String controllerName, String cacheKeyPrefix, Boolean useCache, String[]& searchedLocations)
+   at System.Web.Mvc.VirtualPathProviderViewEngine.FindView(ControllerContext controllerContext, String viewName, String masterName, Boolean useCache)
+   at System.Web.Mvc.ViewEngineCollection.<>c__DisplayClassc.<FindView>b__b(IViewEngine e)
+   at System.Web.Mvc.ViewEngineCollection.Find(Func`2 lookup, Boolean trackSearchedPaths)
+   at System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.ExecuteCore()
+   at System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   at DCT.Monitor.Server.Controllers.BaseController.Execute(RequestContext requestContext) in D:\Projects\tfs-monator - копия\Monator\DCT.Monitor.Server\Controllers\BaseController.cs:line 60
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10.01.2012 16:25:40
+
+Message: Start App
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10.01.2012 16:25:40
+
+Message: System.Web.HttpCompileException (0x80004005): d:\Projects\tfs-monator - копия\Monator\DCT.Monitor.Server\Views\Account\LogOn.cshtml(57): error CS0433: The type 'DCT.Monitor.Modules.Implementation.ProviderModule.ProviderModule' exists in both 'c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\root\15d12187\4d8c2ae6\assembly\dl3\b2f77bb7\205e8dad_76cfcc01\Inetgiant.Monitor.Modules.Implementation.DLL' and 'c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\root\15d12187\4d8c2ae6\assembly\dl3\518a2c76\8517de78_b4cfcc01\DCT.Monitor.Modules.Implementation.DLL'
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.FileExists(String virtualPath)
+   at System.Web.Mvc.VirtualPathProviderViewEngine.GetPathFromGeneralName(ControllerContext controllerContext, List`1 locations, String name, String controllerName, String areaName, String cacheKey, String[]& searchedLocations)
+   at System.Web.Mvc.VirtualPathProviderViewEngine.GetPath(ControllerContext controllerContext, String[] locations, String[] areaLocations, String locationsPropertyName, String name, String controllerName, String cacheKeyPrefix, Boolean useCache, String[]& searchedLocations)
+   at System.Web.Mvc.VirtualPathProviderViewEngine.FindView(ControllerContext controllerContext, String viewName, String masterName, Boolean useCache)
+   at System.Web.Mvc.ViewEngineCollection.<>c__DisplayClassc.<FindView>b__b(IViewEngine e)
+   at System.Web.Mvc.ViewEngineCollection.Find(Func`2 lookup, Boolean trackSearchedPaths)
+   at System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.ExecuteCore()
+   at System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   at DCT.Monitor.Server.Controllers.BaseController.Execute(RequestContext requestContext) in D:\Projects\tfs-monator - копия\Monator\DCT.Monitor.Server\Controllers\BaseController.cs:line 60
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10.01.2012 17:09:00
+
+Message: Start App
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 10.01.2012 17:09:00
+
+Message: System.InvalidOperationException: Произошла ошибка при попытке создать контроллер типа "DCT.Monitor.Server.Controllers.ServiceController". Убедитесь в том, что контроллер имеет общедоступный конструктор без параметров. ---> System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.TypeInitializationException: The type initializer for 'DCT.Monitor.Server.Controllers.ServiceController' threw an exception. ---> Microsoft.Practices.Unity.ResolutionFailedException: Resolution of the dependency failed, type = "DCT.Monitor.Modules.IRequestModule", name = "(none)".
+Exception occurred while: Calling constructor DCT.Monitor.Modules.Implementation.RequestModule.StreamInsightRequestModule().
+Exception is: TypeInitializationException - The type initializer for 'DCT.Monitor.Modules.Implementation.RequestModule.StreamInsightRequestModule' threw an exception.
+-----------------------------------------------
+At the time of the exception, the container was:
+
+  Resolving DCT.Monitor.Modules.Implementation.RequestModule.StreamInsightRequestModule,(none) (mapped from DCT.Monitor.Modules.IRequestModule, (none))
+  Calling constructor DCT.Monitor.Modules.Implementation.RequestModule.StreamInsightRequestModule()
+ ---> System.TypeInitializationException: The type initializer for 'DCT.Monitor.Modules.Implementation.RequestModule.StreamInsightRequestModule' threw an exception. ---> Microsoft.Practices.Unity.ResolutionFailedException: Resolution of the dependency failed, type = "DCT.Monitor.StreamInsight.QueriesCore", name = "(none)".
+Exception occurred while: Calling constructor DCT.Monitor.StreamInsight.QueriesCore(System.String instance, System.Boolean distinctNeeded).
+Exception is: InvalidOperationException - The specified StreamInsight instance name 'StreamInsight_R3' is not valid or could not be found.
+-----------------------------------------------
+At the time of the exception, the container was:
+
+  Resolving DCT.Monitor.StreamInsight.QueriesCore,(none)
+  Calling constructor DCT.Monitor.StreamInsight.QueriesCore(System.String instance, System.Boolean distinctNeeded)
+ ---> System.InvalidOperationException: The specified StreamInsight instance name 'StreamInsight_R3' is not valid or could not be found.
+   at Microsoft.ComplexEventProcessing.Diagnostics.Exceptions.Throw(Exception exception)
+   at Microsoft.ComplexEventProcessing.EmbeddedServerProxy.GetInstanceWithExistenceCheck(String instanceName)
+   at Microsoft.ComplexEventProcessing.Server.Create(String instanceName)
+   at DCT.Monitor.StreamInsight.QueriesCore..ctor(String instance, Boolean distinctNeeded) in D:\Projects\tfs-monator - копия\Monator\DCT.Monitor.StreamInsight\Queries.cs:line 50
+   at BuildUp_DCT.Monitor.StreamInsight.QueriesCore(IBuilderContext )
+   at Microsoft.Practices.ObjectBuilder2.BuildPlanStrategy.PreBuildUp(IBuilderContext context) in e:\Builds\Unity\UnityTemp\Compile\Unity\Unity\Src\ObjectBuilder\Strategies\BuildPlan\BuildPlanStrategy.cs:line 43
+   at Microsoft.Practices.ObjectBuilder2.StrategyChain.ExecuteBuildUp(IBuilderContext context) in e:\Builds\Unity\UnityTemp\Compile\Unity\Unity\Src\ObjectBuilder\Strategies\StrategyChain.cs:line 112
+   at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides) in e:\Builds\Unity\UnityTemp\Compile\Unity\Unity\Src\UnityContainer.cs:line 511
+   --- End of inner exception stack trace ---
+   at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides) in e:\Builds\Unity\UnityTemp\Compile\Unity\Unity\Src\UnityContainer.cs:line 517
+   at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, String name, IEnumerable`1 resolverOverrides) in e:\Builds\Unity\UnityTemp\Compile\Unity\Unity\Src\UnityContainer.cs:line 485
+   at Microsoft.Practices.Unity.UnityContainerExtensions.Resolve[T](IUnityContainer container, ResolverOverride[] overrides) in e:\Builds\Unity\UnityTemp\Compile\Unity\Unity\Src\UnityContainerExtensions.cs:line 504
+   at DCT.Monitor.Modules.Implementation.RequestModule.StreamInsightRequestModule..cctor() in D:\Projects\tfs-monator - копия\Monator\DCT.Monitor.Modules.Implementation\RequestModule\StreamInsightRequestModule.cs:line 20
+   --- End of inner exception stack trace ---
+   at DCT.Monitor.Modules.Implementation.RequestModule.StreamInsightRequestModule..ctor()
+   at BuildUp_DCT.Monitor.Modules.Implementation.RequestModule.StreamInsightRequestModule(IBuilderContext )
+   at Microsoft.Practices.ObjectBuilder2.BuildPlanStrategy.PreBuildUp(IBuilderContext context) in e:\Builds\Unity\UnityTemp\Compile\Unity\Unity\Src\ObjectBuilder\Strategies\BuildPlan\BuildPlanStrategy.cs:line 43
+   at Microsoft.Practices.ObjectBuilder2.StrategyChain.ExecuteBuildUp(IBuilderContext context) in e:\Builds\Unity\UnityTemp\Compile\Unity\Unity\Src\ObjectBuilder\Strategies\StrategyChain.cs:line 112
+   at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides) in e:\Builds\Unity\UnityTemp\Compile\Unity\Unity\Src\UnityContainer.cs:line 511
+   --- End of inner exception stack trace ---
+   at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides) in e:\Builds\Unity\UnityTemp\Compile\Unity\Unity\Src\UnityContainer.cs:line 517
+   at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, String name, IEnumerable`1 resolverOverrides) in e:\Builds\Unity\UnityTemp\Compile\Unity\Unity\Src\UnityContainer.cs:line 485
+   at Microsoft.Practices.Unity.UnityContainerExtensions.Resolve[T](IUnityContainer container, ResolverOverride[] overrides) in e:\Builds\Unity\UnityTemp\Compile\Unity\Unity\Src\UnityContainerExtensions.cs:line 504
+   at DCT.Monitor.Server.Controllers.ServiceController..cctor() in D:\Projects\tfs-monator - копия\Monator\DCT.Monitor.Server\Controllers\ServiceController.cs:line 20
+   --- End of inner exception stack trace ---
+   at DCT.Monitor.Server.Controllers.ServiceController..ctor()
+   --- End of inner exception stack trace ---
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipVisibilityChecks, Boolean skipCheckThis, Boolean fillCache)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Web.Mvc.DefaultControllerFactory.DefaultControllerActivator.Create(RequestContext requestContext, Type controllerType)
+   --- End of inner exception stack trace ---
+   at System.Web.Mvc.DefaultControllerFactory.DefaultControllerActivator.Create(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<BeginProcessRequest>b__2()
+   at System.Web.Mvc.SecurityUtil.<>c__DisplayClassb`1.<ProcessInApplicationTrust>b__a()
+   at System.Web.Mvc.SecurityUtil.ProcessInApplicationTrust[TResult](Func`1 func)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+----------------------------------------

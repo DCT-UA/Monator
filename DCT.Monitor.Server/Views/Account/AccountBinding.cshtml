@@ -1,0 +1,177 @@
+﻿@using DCT.Monitor.Server.Helpers
+@using DCT.Monitor.Entities
+@using DCT.Monitor.Modules.Implementation.ProviderModule
+@{
+	ViewBag.Title = "AccountBinding";
+	ViewBag.CurrentMenuItem = "accountbinding";
+	Layout = @"~/Views/Shared/_SimpleLayout.cshtml";
+}
+@model DCT.Monitor.Server.Models.BindingModel
+
+<div id="form" class="single">
+        @using (Html.BeginForm("AccountBinding", "Account", FormMethod.Post, new { @class = "form", name = "form" }))
+        { 
+	        @Html.ValidationSummary();
+
+                    var providerId = Convert.ToInt32(ViewData["ProviderId"]);
+					if (providerId == 1)
+					{
+						<p>Click on the icon and change your social binding</p>
+				        <ul>
+@*						  <li>
+								<a class="noline" onclick="FB.Connect.requireSession(function () { window.location.reload(); });return false;" title="To make a profile binding to Facebook" href="#">
+									<img src="@Url.Content("~/Content/img/facebook_32.png")" alt="" />
+								</a>
+							</li>*@
+					       <li>
+								<a class="noline" @*class="twitter"*@ onclick="PostAuth('twitter')" title="To make a profile binding to Twitter" href="javascript:void(0)">
+									<img src="@Url.Content("~/Content/img/twitter_32.png")" alt="" />
+								</a>
+							</li>
+					        <li>
+								<a class="noline" @*class="google"*@ onclick="PostAuth('google')" title="To make a profile binding to Google" href="javascript:void(0)">
+									<img src="@Url.Content("~/Content/img/google_32.png")" alt="" />
+								</a>
+							</li>
+					        <li>
+								<a class="noline" @*class="vkontakte"*@ onclick="PostAuth('vkontakte')" title="To make a profile binding to Vkontakte" href="javascript:void(0)">
+									<img src="@Url.Content("~/Content/img/vkontakte_32.png")" alt="" />	
+								</a>
+							</li>
+					        <li>
+								<a class="noline" @*class="linkedin"*@ onclick="PostAuth('linkedin')" title="To make a profile binding to LinkedIn" href="javascript:void(0)">
+									<img src="@Url.Content("~/Content/img/linkedin_32.png")" alt="" />
+								</a>
+							</li>
+					        <li>
+								<a class="noline" @*class="myspace"*@ onclick="PostAuth('myspace')" title="To make a profile binding to MySpace" href="javascript:void(0)">
+									<img src="@Url.Content("~/Content/img/myspace_32.png")" alt="" />
+								</a>
+							</li>
+				        </ul>
+					}
+					else
+					{
+						//var sessionHelper = new SessionHelper(HttpContext.Current);
+						var providerModule = new ProviderModule();
+						
+						@*<p>You already have a binding on an account on @providerModule.GetProvider(providerId).Name to replace a binding click corresponding icon more low:</p>*@
+						<p>@providerModule.GetProvider(providerId).Name is already added to you profile</p>
+						<ul>
+							@if (providerId != 2)
+							{
+								<li>
+									<a class="noline" @*class="twitter"*@ onclick="PostAuth('twitter')" title="To make a profile binding to Twitter" href="javascript:void(0)">
+										<img src="@Url.Content("~/Content/img/twitter_32.png")" alt="" />
+									</a>
+								</li>
+							}
+
+							@if (providerId != 3)
+							{
+								<li>
+									<a class="noline" @*class="google"*@ onclick="PostAuth('google')" title="To make a profile binding to Google" href="javascript:void(0)">
+										<img src="@Url.Content("~/Content/img/google_32.png")" alt="" />
+									</a>
+								</li>
+							} 
+
+@*							@if (providerId != 4)
+						{
+								<li>
+									<a class="noline" onclick="FB.Connect.requireSession(function () { window.location.reload(); });return false;" title="To make a profile binding to Facebook" href="#">
+										<img src="@Url.Content("~/Content/img/facebook_32.png")" alt="" />
+									</a>
+								</li>
+							}*@ 
+
+							@if (providerId != 5)
+							{
+								<li>
+									<a class="noline" @*class="vkontakte"*@ onclick="PostAuth('vkontakte')" title="To make a profile binding to Vkontakte" href="javascript:void(0)">
+										<img src="@Url.Content("~/Content/img/vkontakte_32.png")" alt="" />	
+									</a>
+								</li>
+							}
+						
+							@if (providerId != 6)
+							{
+								<li>
+									<a class="noline" @*class="linkedin"*@ onclick="PostAuth('linkedin')" title="To make a profile binding to LinkedIn" href="javascript:void(0)">
+										<img src="@Url.Content("~/Content/img/linkedin_32.png")" alt="" />
+									</a>
+								</li>
+							}
+						
+							@if (providerId != 7)
+							{
+								<li>
+									<a class="noline" @*class="myspace"*@ onclick="PostAuth('myspace')" title="To make a profile binding to MySpace" href="javascript:void(0)">
+										<img src="@Url.Content("~/Content/img/myspace_32.png")" alt="" />
+									</a>
+								</li>
+							}
+						</ul>
+			
+					    if (Model != null)
+					    {
+							var bindCheck = 0;
+						    var warning = Model.ChangeBinding.BindUser;
+							if ((warning as User) != null )
+						    {
+								if ((warning as User).UserName != Model.ChangeBinding.CurrentUser.UserName)
+								{
+									<div>The given binding already was used on @warning.UserName account. Do you really want to bind to this account?</div>
+									bindCheck = 1;
+								}
+								else
+								{
+									bindCheck = 2;
+								}
+						    }
+
+						    var check = Model.ChangeBinding.CurrentUser;
+							if ((check as User) != null )
+						    {
+								if (bindCheck <= 1)
+								{
+									<div class="buttons">
+										@Url.MyHome().AsLinkButton("Back", "back", "grey button back")
+										<input type="submit" class="button orange" value="Confirm"/>
+									</div>
+								}
+						    }
+					    }
+					}
+		        <div class="info">
+					<label for="termsaccept">
+						@Url.Home().AsLink("Skip this step")
+					</label>
+				</div>
+	        @Html.HiddenFor( m => m.AccountBinding.ProviderId)
+	        @Html.HiddenFor(m => m.AccountBinding.ProviderUserId)
+		}
+</div> 
+
+@section scripts {
+	<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php"
+		type="text/javascript"></script>
+
+	<script type="text/javascript">
+		FB.init("@DCT.Monitor.Server.Extensions.Constants.FacebookApplicationKey", "Facebook"); 
+	</script>
+
+	<script type="text/javascript">
+		function PostAuth(path) {
+			document.forms["form"].action = "/Account/AccountBinding?site=" + path;
+			document.forms["form"].submit();
+		}
+	</script>
+
+	<script type="text/javascript">
+
+		
+
+	</script>
+}
+

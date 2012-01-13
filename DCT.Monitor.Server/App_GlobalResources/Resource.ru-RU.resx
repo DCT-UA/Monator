@@ -1,0 +1,621 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Administering" xml:space="preserve">
+    <value>Администрирование</value>
+  </data>
+  <data name="SiteName" xml:space="preserve">
+    <value>Имя сайта</value>
+  </data>
+  <data name="ArticleDescription" xml:space="preserve">
+    <value>Краткое описание статьи:</value>
+  </data>
+  <data name="Articles" xml:space="preserve">
+    <value>Статьи</value>
+  </data>
+  <data name="ArticleText" xml:space="preserve">
+    <value>Текст статьи:</value>
+  </data>
+  <data name="Birthday" xml:space="preserve">
+    <value>День рождения</value>
+  </data>
+  <data name="CannotCreateComments" xml:space="preserve">
+    <value>Вы не авторизированы. Вы не можете оставить комментарии.</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Категории</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Категория</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Изменить пароль</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Комментарии</value>
+  </data>
+  <data name="ContactInfo" xml:space="preserve">
+    <value>Контактная информация</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>Создано</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="DeleteArticleQuery" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить эту статью и все её комментарии?</value>
+  </data>
+  <data name="DeleteCategoryQuery" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить эту категорию и убрать её из всех статей?</value>
+  </data>
+  <data name="DeleteCommentQuery" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить этот комментарий?</value>
+  </data>
+  <data name="DeleteTagQuery" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить этот тег и убрать его из всех статей?</value>
+  </data>
+  <data name="DeleteUserQuery" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить пользователя и все его статьи и коментарии?</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
+  <data name="EditProfile" xml:space="preserve">
+    <value>Редактировать информацию о себе</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="AdvancedSearch" xml:space="preserve">
+    <value>расширенный поиск</value>
+  </data>
+  <data name="HomeLink" xml:space="preserve">
+    <value>На главную</value>
+  </data>
+  <data name="Interests" xml:space="preserve">
+    <value>Интересы</value>
+  </data>
+  <data name="LastUpdated" xml:space="preserve">
+    <value>Последний раз обновлено</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>Загрузить...</value>
+  </data>
+  <data name="Logoff" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="Logon" xml:space="preserve">
+    <value>Вход</value>
+  </data>
+  <data name="MyAccount" xml:space="preserve">
+    <value>Мой аккаунт</value>
+  </data>
+  <data name="MyArticles" xml:space="preserve">
+    <value>Мои статьи</value>
+  </data>
+  <data name="Quote" xml:space="preserve">
+    <value>Цитировать</value>
+  </data>
+  <data name="Registration" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="SelfDescription" xml:space="preserve">
+    <value>Про себя</value>
+  </data>
+  <data name="Tag" xml:space="preserve">
+    <value>Метка</value>
+  </data>
+  <data name="Tags" xml:space="preserve">
+    <value>Метки</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="UserSurname" xml:space="preserve">
+    <value>Фамилия</value>
+  </data>
+  <data name="Wellcome" xml:space="preserve">
+    <value>Приветствуем вас</value>
+  </data>
+  <data name="Writen" xml:space="preserve">
+    <value>написал(а):</value>
+  </data>
+  <data name="NoComments" xml:space="preserve">
+    <value>Нет комментариев для этой статьи. Будь первым!</value>
+  </data>
+  <data name="CreateComment" xml:space="preserve">
+    <value>Комментировать</value>
+  </data>
+  <data name="Miscellaneous" xml:space="preserve">
+    <value>Разное</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="UserSearch" xml:space="preserve">
+    <value>Поиск пользователей</value>
+  </data>
+  <data name="CommonMark" xml:space="preserve">
+    <value>Средняя оцена:</value>
+  </data>
+  <data name="SetMarkQuery" xml:space="preserve">
+    <value>Вы уверены, что хотите оценить эту статью оценкой </value>
+  </data>
+  <data name="UserMark" xml:space="preserve">
+    <value>Ваша оценка:</value>
+  </data>
+  <data name="Donate" xml:space="preserve">
+    <value>Пожертвовать</value>
+  </data>
+  <data name="DonateRequest_sLink" xml:space="preserve">
+    <value>Если эта статья Вам помогла, Вы можете {0}</value>
+  </data>
+  <data name="AmountOfMoney" xml:space="preserve">
+    <value>Сумма денег</value>
+  </data>
+  <data name="DonateMaster" xml:space="preserve">
+    <value>Мастер пожертвований приветствует Вас</value>
+  </data>
+  <data name="DonationThanks" xml:space="preserve">
+    <value>Спасибо за пожертвование</value>
+  </data>
+  <data name="BackToArticle" xml:space="preserve">
+    <value>Назад к статье</value>
+  </data>
+  <data name="UserCount" xml:space="preserve">
+    <value>Количество пользователей</value>
+  </data>
+  <data name="TotalAmount" xml:space="preserve">
+    <value>Общая сумма заработанных Вами денег составляет</value>
+  </data>
+  <data name="ForDate" xml:space="preserve">
+    <value>За дату</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Всего</value>
+  </data>
+  <data name="CreateArticle" xml:space="preserve">
+    <value>Создать статью</value>
+  </data>
+  <data name="Income" xml:space="preserve">
+    <value>Заработок</value>
+  </data>
+  <data name="BestIncomes" xml:space="preserve">
+    <value>Прибыльные</value>
+  </data>
+  <data name="MostCommented" xml:space="preserve">
+    <value>Комментируемые</value>
+  </data>
+  <data name="MostRead" xml:space="preserve">
+    <value>Читаемые</value>
+  </data>
+  <data name="MostWriting" xml:space="preserve">
+    <value>Писатели</value>
+  </data>
+  <data name="NickName" xml:space="preserve">
+    <value>Ник</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Действия</value>
+  </data>
+  <data name="CommentCount" xml:space="preserve">
+    <value>Количество комментариев</value>
+  </data>
+  <data name="ReadCount" xml:space="preserve">
+    <value>Количество просмотров</value>
+  </data>
+  <data name="Latest" xml:space="preserve">
+    <value>Последние</value>
+  </data>
+  <data name="LivePageQuery" xml:space="preserve">
+    <value>Вы собираетесь покинуть эту страницу. Все несохраненные изменения будут утерены. Вы уверены в своем выборе?</value>
+  </data>
+  <data name="Draft" xml:space="preserve">
+    <value>Черновики</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>Опубликованные</value>
+  </data>
+  <data name="SaveAndContinue" xml:space="preserve">
+    <value>Сохранить и продолжить</value>
+  </data>
+  <data name="SaveAndPublish" xml:space="preserve">
+    <value>Опубликовать</value>
+  </data>
+  <data name="SaveDraft" xml:space="preserve">
+    <value>Черновик</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>Первая</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>из</value>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>Последняя</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Следующая</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Страница</value>
+  </data>
+  <data name="Pages" xml:space="preserve">
+    <value>Страницы</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Предидущая</value>
+  </data>
+  <data name="Published" xml:space="preserve">
+    <value>Опубликованные</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="CreatedDate_sDate_sTime" xml:space="preserve">
+    <value>Создано {0} в {1}</value>
+  </data>
+  <data name="PublishedDate_sDate_sTime" xml:space="preserve">
+    <value>Опубликовано {0} в {1}</value>
+  </data>
+  <data name="PublishedDate_sName_sDate_sTime" xml:space="preserve">
+    <value>Опубликовано {0} {1} в {2}</value>
+  </data>
+  <data name="CloseEmail" xml:space="preserve">
+    <value>Закрытый email</value>
+  </data>
+  <data name="ChoseDateRange" xml:space="preserve">
+    <value>Выберите диапазон дат</value>
+  </data>
+  <data name="ForAll" xml:space="preserve">
+    <value>Всё</value>
+  </data>
+  <data name="ForMonth" xml:space="preserve">
+    <value>Месяц</value>
+  </data>
+  <data name="ForWeek" xml:space="preserve">
+    <value>Неделя</value>
+  </data>
+  <data name="ForYear" xml:space="preserve">
+    <value>Год</value>
+  </data>
+  <data name="ArticleSearch" xml:space="preserve">
+    <value>Поиск статей</value>
+  </data>
+  <data name="SearchInCaption" xml:space="preserve">
+    <value>Искать в заголовке</value>
+  </data>
+  <data name="SearchInDescription" xml:space="preserve">
+    <value>Искать в описании</value>
+  </data>
+  <data name="SearchInText" xml:space="preserve">
+    <value>Искать в тексте</value>
+  </data>
+  <data name="AnonimousUser" xml:space="preserve">
+    <value>Аноним</value>
+  </data>
+  <data name="AboutMe" xml:space="preserve">
+    <value>О себе</value>
+  </data>
+  <data name="Avatar" xml:space="preserve">
+    <value>Аватарка</value>
+  </data>
+  <data name="For24Hours" xml:space="preserve">
+    <value>24 часа</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>статистика</value>
+  </data>
+  <data name="NotSet" xml:space="preserve">
+    <value>Не указано</value>
+  </data>
+  <data name="PageOfUser" xml:space="preserve">
+    <value>Страничка пользователя</value>
+  </data>
+  <data name="NoSearchResult" xml:space="preserve">
+    <value>Ничего не было найдено по вашему запросу</value>
+  </data>
+  <data name="NoDraftArticles" xml:space="preserve">
+    <value>У вас нет черновиков</value>
+  </data>
+  <data name="NoPublishedArticles" xml:space="preserve">
+    <value>У вас нет опубликованных статей</value>
+  </data>
+  <data name="NoArticles" xml:space="preserve">
+    <value>Никто не написал статей за данный промежуток времени!&lt;br/&gt; Напиши и будь здесь</value>
+  </data>
+  <data name="Detailed" xml:space="preserve">
+    <value>Подробнее</value>
+  </data>
+  <data name="AllDatesAfter" xml:space="preserve">
+    <value>Все даты после...</value>
+  </data>
+  <data name="AllDatesBefore" xml:space="preserve">
+    <value>Все даты до...</value>
+  </data>
+  <data name="DateRange" xml:space="preserve">
+    <value>Диапазон дат...</value>
+  </data>
+  <data name="DoneButtonText" xml:space="preserve">
+    <value>Готово</value>
+  </data>
+  <data name="NextLinkText" xml:space="preserve">
+    <value>Следующий период</value>
+  </data>
+  <data name="PrevLinkText" xml:space="preserve">
+    <value>Предидущий период</value>
+  </data>
+  <data name="RangeEndTitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeStartTitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SpecificDate" xml:space="preserve">
+    <value>Выбрать дату...</value>
+  </data>
+  <data name="DayNames" xml:space="preserve">
+    <value>['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Субота']</value>
+  </data>
+  <data name="DayNamesMin" xml:space="preserve">
+    <value>['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб']</value>
+  </data>
+  <data name="MonthNames" xml:space="preserve">
+    <value>['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']</value>
+  </data>
+  <data name="HomePage" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="MarkedAs" xml:space="preserve">
+    <value>Помечено как:</value>
+  </data>
+  <data name="TagCloud" xml:space="preserve">
+    <value>Облако тегов</value>
+  </data>
+  <data name="PageNotFound" xml:space="preserve">
+    <value>Страница не найдена</value>
+  </data>
+  <data name="Administrator" xml:space="preserve">
+    <value>Администратор</value>
+  </data>
+  <data name="Moderator" xml:space="preserve">
+    <value>Модератор</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Пользователь</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="NoArticlesAditionalAction" xml:space="preserve">
+    <value>Вы также можете найти статьи по облаку тегов!</value>
+  </data>
+  <data name="HideArticleQuery" xml:space="preserve">
+    <value>Вы уверены, что хотите переместить эту статью в черновики?</value>
+  </data>
+  <data name="PublishArticleQuery" xml:space="preserve">
+    <value>Вы уверены, что хотите опубликовать эту статью?</value>
+  </data>
+  <data name="LastActivitiDate" xml:space="preserve">
+    <value>Активность</value>
+  </data>
+  <data name="LastActivity_sDate_sTime" xml:space="preserve">
+    <value>Последний раз был на сайте {0} в {1}</value>
+  </data>
+  <data name="RegistrationDate" xml:space="preserve">
+    <value>Дата регистрации</value>
+  </data>
+  <data name="SiteCaption" xml:space="preserve">
+    <value>Хабр-Хабр</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Профиль</value>
+  </data>
+  <data name="SiteDomain" xml:space="preserve">
+    <value>Доменное имя сайта</value>
+  </data>
+  <data name="ArticleDescriptionNeededQuery" xml:space="preserve">
+    <value>Описание статьи не должно быть пустым!</value>
+  </data>
+  <data name="ArticleTextNeededQuery" xml:space="preserve">
+    <value>Текст статьи не должен быть пустым!</value>
+  </data>
+  <data name="CategoryNotFound" xml:space="preserve">
+    <value>Категория не найдена, попробуйте еще раз!</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Пользователи</value>
+  </data>
+  <data name="AboutAs" xml:space="preserve">
+    <value>О нас</value>
+  </data>
+  <data name="Advertise" xml:space="preserve">
+    <value>Реклама</value>
+  </data>
+  <data name="ContactAs" xml:space="preserve">
+    <value>Контакты</value>
+  </data>
+  <data name="HideArticle" xml:space="preserve">
+    <value>Переместить в черновики</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Просмотр</value>
+  </data>
+  <data name="EditArticle" xml:space="preserve">
+    <value>Редактировать статью</value>
+  </data>
+  <data name="SearchByCategories" xml:space="preserve">
+    <value>Поиск по категориям</value>
+  </data>
+  <data name="SearchByDateRange" xml:space="preserve">
+    <value>Поиск по промежутку дат</value>
+  </data>
+  <data name="SearchByNickName" xml:space="preserve">
+    <value>Поиск по имени</value>
+  </data>
+  <data name="SearchByTags" xml:space="preserve">
+    <value>Поиск по тегам</value>
+  </data>
+  <data name="SortResultBy" xml:space="preserve">
+    <value>Сортировать результат по</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Искать</value>
+  </data>
+  <data name="PublisherName" xml:space="preserve">
+    <value>Имя автора</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Логин</value>
+  </data>
+  <data name="ArticleImage" xml:space="preserve">
+    <value>Картинка для статьи</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Обзор...</value>
+  </data>
+  <data name="ArticleImageRequired" xml:space="preserve">
+    <value>Нельзя создать статью без картинки.</value>
+  </data>
+  <data name="InstallScript" xml:space="preserve">
+    <value>Установка скрипта</value>
+  </data>
+  <data name="CreateSite" xml:space="preserve">
+    <value>Создать сайт</value>
+  </data>
+  <data name="DeleteSite" xml:space="preserve">
+    <value>Удалить сайт</value>
+  </data>
+  <data name="SiteCreation" xml:space="preserve">
+    <value>Создание сайта</value>
+  </data>
+  <data name="SitePages" xml:space="preserve">
+    <value>Страницы сайта</value>
+  </data>
+</root>

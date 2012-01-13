@@ -1,0 +1,148 @@
+﻿@using DCT.Monitor.Server.Controllers
+@using DCT.Monitor.Server.Helpers
+@using DCT.Monitor.Server.Models
+@using DCT.Monitor.Modules.Implementation.ProviderModule
+
+@model AccountModel
+
+@{
+	ViewBag.Title = "Logon";
+	ViewBag.CurrentMenuItem = "logon";
+	Layout = @"~/Views/Shared/_SimpleLayout.cshtml";
+}
+
+<div id="form" class="single">
+@{
+	var providerId = Convert.ToInt32(ViewData["ProviderId"]);
+	if (providerId == 0)
+	{
+				
+    <p>Connect your account with </p>
+    <ul>
+		@*<li>
+			<a class="noline" href="@Url.Logon("google").AsUrl()" title="Facebook">
+				<img src="@Url.Content("~/Content/img/facebook_32.png")" alt="" />
+			</a>
+		</li>*@
+	    <li>
+			<a class="noline" href="@Url.Logon("twitter").AsUrl()" title="Twitter">
+				<img src="@Url.Content("~/Content/img/twitter_32.png")" alt="" />
+			</a>
+		</li>
+	    <li>
+			<a class="noline" href="@Url.Logon("google").AsUrl()" title="Google">
+				<img src="@Url.Content("~/Content/img/google_32.png")" alt="" />
+			</a>
+		</li>
+	    <li>
+			<a class="noline" href="@Url.Logon("linkedin").AsUrl()" title="LinkedIn">
+				<img src="@Url.Content("~/Content/img/linkedin_32.png")" alt="" />
+			</a>
+		</li>
+	    <li>
+			<a class="noline" href="@Url.Logon("myspace").AsUrl()" title="MySpace">
+				<img src="@Url.Content("~/Content/img/myspace_32.png")" alt="" />
+			</a>
+		</li>
+	    <li>
+			<a class="noline" href="@Url.Logon("vkontakte").AsUrl()" title="Vkontakte">
+				<img src="@Url.Content("~/Content/img/vkontakte_32.png")" alt="" />
+			</a>
+		</li>
+    </ul>
+    <p>or</p>
+	}
+	else
+	{
+		var providerModule = new ProviderModule();
+		<p>@providerModule.GetProvider(providerId).Name will be added to your profile. You can change a binding pressed an icon more below.</p>
+	<ul>
+		@*
+		@if (providerId != 4)
+		{
+			<li>
+				<a class="noline" href="@Url.Logon("google").AsUrl()" title="Facebook">
+					<img src="@Url.Content("~/Content/img/facebook_32.png")" alt="" />
+				</a>
+			</li>
+		}*@
+		@if (providerId != 2)
+		{
+			<li>
+				<a class="noline" href="@Url.Logon("twitter").AsUrl()" title="Twitter">
+					<img src="@Url.Content("~/Content/img/twitter_32.png")" alt="" />
+				</a>
+			</li>
+		}
+		@if (providerId != 3)
+		{
+			<li>
+				<a class="noline" href="@Url.Logon("google").AsUrl()" title="Google">
+					<img src="@Url.Content("~/Content/img/google_32.png")" alt="" />
+				</a>
+			</li>
+		}
+		@if (providerId != 6)
+		{
+			<li>
+				<a class="noline" href="@Url.Logon("linkedin").AsUrl()" title="LinkedIn">
+					<img src="@Url.Content("~/Content/img/linkedin_32.png")" alt="" />
+				</a>
+			</li>
+		}
+		@if (providerId != 7)
+		{
+			<li>
+				<a class="noline" href="@Url.Logon("myspace").AsUrl()" title="MySpace">
+					<img src="@Url.Content("~/Content/img/myspace_32.png")" alt="" />
+				</a>
+			</li>
+		}
+		@if (providerId != 5)
+		{
+			<li>
+				<a class="noline" href="@Url.Logon("vkontakte").AsUrl()" title="Vkontakte">
+					<img src="@Url.Content("~/Content/img/vkontakte_32.png")" alt="" />
+				</a>
+			</li>
+		}
+		</ul>
+	}
+	}
+    <div class="buttom">
+	    <a href="javascript:signIn()" class="button blue" id="signin">Sign in with a Monator Account</a> 
+	    <a href="javascript:createAccount()" class="button blue" id="signup">Create an Account</a>
+    </div>
+    
+    @{
+		Html.RenderPartial("LogOnUserControl");
+		Html.RenderPartial("RegisterUserControl");
+    }
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        function signIn() {
+            $('.signup').slideUp('slow', function () {
+                $('.signin').slideDown('slow');
+            });
+        }
+        function createAccount() {
+            $('.signin').slideUp('slow', function () {
+                $('.signup').slideDown('slow');
+            });
+        }
+    </script>
+
+    <script type="text/javascript" id='signinJQ'>
+	    $(document).ready(function () { $('.@(Model.IsLogon ? "signup" : "signin")').hide(); });
+    </script>
+@*
+	<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript">
+	
+	</script>
+
+	<script type="text/javascript">
+		FB.init("@Skyner.Server.Extensions.Constants.FacebookApplicationKey", "Facebook"); 
+	</script>*@
+}

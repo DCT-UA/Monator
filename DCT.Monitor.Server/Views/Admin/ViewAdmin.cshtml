@@ -1,0 +1,46 @@
+﻿@using DCT.Monitor.Server.Helpers
+@model DCT.Monitor.Server.Models.AdminUserListModel
+
+@{
+	ViewBag.Title = "ViewInformationAdmin";
+	Layout = @"~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="form" class="signleSite">
+<fieldset class="signin">
+	@if (Model == null || Model.Users.Count == 0)
+	{
+		<div>User list is empty!</div>
+	}
+	else
+	{
+		var k = 0;
+		<table class="adminka" border="1">
+			<tr>
+				<th>User name</th>
+				<th>User email</th>
+				<th>User sites</th>
+			</tr>
+			 
+			 @foreach (var user in Model.Users)
+			 {
+				<tr>
+					<td class="adminka">
+						@user.UserName
+					</td>
+					<td class="adminka">
+						@user.Email
+					</td>
+					<td class="adminka">
+						@Model.UserSitesString[k]
+					</td>
+					<td>
+						@Url.EditUser(user).AsLink("Edit", "edit blue button siteButton")
+					</td>
+				</tr>
+				k++;
+			 }
+		</table>
+	}
+	</fieldset>
+</div>

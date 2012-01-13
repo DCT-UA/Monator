@@ -1,0 +1,67 @@
+﻿@model DCT.Monitor.Server.Models.PageListModel
+
+@using DCT.Monitor.Server.Helpers;
+
+@{
+    ViewBag.Title = "Pages";
+	Layout = "~/Views/Shared/_MyHomeLayout.cshtml";
+	ViewBag.CurrentMenuItem = "myhome";
+}
+
+
+<h2>@Model.Site.Domain site pages</h2>
+
+<div id="form" class="singleSite">
+	<div class="signin" style="width: 90%; margin: 0 auto">
+		@if (Model.PageModel == null || Model.Pages.Count == 0)
+		{
+			<div>Your page list is empty!</div>
+		}
+		else
+		{
+			foreach (var page in Model.Pages)
+			{
+				using (Html.BeginForm("EditPage", "SiteManager", FormMethod.Post))
+				{
+					<div>
+						<label style="float:left; font-size: 11pt; padding:5px"><b>Pages Url Pattern:</b></label>
+
+						<div style="float:left; width: 325px; margin: 0 10px" class="field">
+							<div class="border">
+								@Html.TextBox("Page_" + page.Id, page.PagePattern)
+								@Html.Hidden("id", page.Id)
+							</div>
+						</div>
+						
+						<div style="float:left; margin: 0 5px" class="text">
+							<input type="submit" value="Update" class="blue button zero-margin"/>
+						</div>
+						<div style="float:left" class="text"><a href="@Url.DeletePage(page).AsUrl()" class="delete orange button" style="display: block">Delete</a></div>
+						<div class="clear delimiter"> </div>
+					</div>
+				}
+			}
+		}
+	</div>
+
+	@using (Html.BeginForm("AddPage", "SiteManager", FormMethod.Post))
+	{
+		<fieldset class="domain" style="width: 90%; margin: 0 auto;">
+			<div class="script">
+				<div class="scriptText field http" style="width: 520px; margin-left: 0">
+					<label>http://@(Model.Site.Domain)</label>
+					<div class="border">
+						@Html.TextBoxFor(m => m.PageModel.Page, new { Class = "long", title="Page pattern. Example: /mypage.html* or /*/article/*" })
+						@Html.Hidden("siteId", ViewData["SiteId"])
+					</div>@*<div style="float:right; margin-bottom:30px;">/</div>*@
+				</div>
+				<input id="createclean" type="submit" class="button orange zero-margin" value="Add new page" />
+			</div>
+			<div class="fieldBox">
+				<div class="error">
+					@Html.ValidationMessageFor(m => m.PageModel)
+				</div>
+			</div>
+		</fieldset>
+    }
+</div>

@@ -1,0 +1,49 @@
+﻿@using DCT.Monitor.Server.Helpers
+
+@{
+	ViewBag.Title = "Register";
+	ViewBag.CurrentMenuItem = "register";
+}
+
+<div class="blue box" style="float:none;">
+    <div class="content">
+        @Html.ValidationSummary("RegistrationUnsuccess")
+        @{
+	        var providerId = Convert.ToInt32(ViewData["ProviderId"]);
+	        if (providerId != 1 && providerId != null)
+	        {
+		        <div>The binding will be added to your profile automatically!</div>
+	        }
+        }
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form", name = "form" }))
+        { 
+            <br />
+	        @Html.ValidationSummary();
+		    <label for="username">User Name:</label>
+		    @Html.TextBox("username", "", new { Class = "short" }) 
+		    @Html.ValidationMessage("username") 
+            <br />
+		    <label for="email">Email:</label>
+		    @Html.TextBox("email", "", new { Class = "short" })
+		    @Html.ValidationMessage("email") 
+            <br />
+		    <label for="password">Password :</label>
+		    @Html.Password("password", "", new { Class = "short" })
+		    @Html.ValidationMessage("password") 
+            <br />
+		    <label for="confirmPassword">Confirm Password: </label>
+		    @Html.Password("confirmPassword", "", new { Class = "short" })
+		    @Html.ValidationMessage("confirmPassword") 
+	        @Html.Hidden("ProviderId")
+	        @Html.Hidden("ProviderUserId")            
+            <div style="line-height: 40px; margin-top: 30px;">
+                <input type="submit" class="submitbutton" value="Register"/>
+                @Url.RetrivePassword().AsLink("Forgot Password?")
+                <span> </span>
+                @Url.Logon().AsLink("Login")
+            </div>
+        } 
+        <div class="clear"></div>
+    </div> 
+    <div class="bottom"> </div>
+</div>

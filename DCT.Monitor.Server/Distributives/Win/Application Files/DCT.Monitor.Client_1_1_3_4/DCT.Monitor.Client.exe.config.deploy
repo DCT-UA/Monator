@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<configuration>
+  <configSections>
+    <section name="loggingConfiguration" type="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.LoggingSettings, Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" requirePermission="true"/>
+    <section name="unity" type="Microsoft.Practices.Unity.Configuration.UnityConfigurationSection, Microsoft.Practices.Unity.Configuration" requirePermission="false"/>
+    <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+      <section name="DCT.Monitor.Client.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+    </sectionGroup>
+  </configSections>
+  
+  <loggingConfiguration name="" tracingEnabled="true" defaultCategory="General">
+    <listeners>
+      <add name="Rolling Flat File Trace Listener" type="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.RollingFlatFileTraceListener, Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" listenerDataType="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.RollingFlatFileTraceListenerData, Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" fileName="Logs\rolling.log" formatter="Text Formatter" rollInterval="Week" maxArchivedFiles="10"/>
+    </listeners>
+    <formatters>
+      <add type="Microsoft.Practices.EnterpriseLibrary.Logging.Formatters.TextFormatter, Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" template="Timestamp: {timestamp}{newline}&#xD;&#xA;Message: {message}{newline}"
+                             name="Text Formatter"/>
+    </formatters>
+    <categorySources>
+      <add switchValue="All" name="General">
+        <listeners>
+          <add name="Rolling Flat File Trace Listener"/>
+        </listeners>
+      </add>
+    </categorySources>
+    <specialSources>
+      <allEvents switchValue="All" name="All Events"/>
+      <notProcessed switchValue="All" name="Unprocessed Category"/>
+      <errors switchValue="All" name="Logging Errors &amp; Warnings">
+        <listeners>
+          <add name="Rolling Flat File Trace Listener"/>
+        </listeners>
+      </errors>
+    </specialSources>
+  </loggingConfiguration>
+  <appSettings>
+    <add key="DistinctCount" value="Off"/>
+    <add key="domain" value="monator.all.net"/>
+  </appSettings> 
+    <!--<unity xmlns="http://schemas.microsoft.com/practices/2010/unity">
+    <alias alias="ICache" type="DCT.Monitor.Cache.ICache, DCT.Monitor.Cache"/>
+    <alias alias="Memcached" type="DCT.Monitor.Cache.Memcached, DCT.Monitor.Cache"/>
+    <alias alias="DictionaryCache" type="DCT.Monitor.Cache.DictionaryCache, DCT.Monitor.Cache"/>
+    <alias alias="IMonitorDataSource" type="DCT.Monitor.DataSource.IMonitorDataSource, DCT.Monitor.DataSource"/>
+    <alias alias="CacheDataSource" type="DCT.Monitor.DataSource.CacheDataSource, DCT.Monitor.DataSource"/>
+    <alias alias="ServiceDataSource" type="DCT.Monitor.DataSource.ServiceDataSource, DCT.Monitor.DataSource"/>
+    <container>
+      <register type="ICache" mapTo="DictionaryCache" />
+      <register type="IMonitorDataSource" mapTo="ServiceDataSource" />
+    </container>
+  </unity>-->
+<startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/></startup><userSettings>
+  <DCT.Monitor.Client.Properties.Settings>
+            <setting name="Theme" serializeAs="String">
+                <value>Blue</value>
+            </setting>
+        </DCT.Monitor.Client.Properties.Settings>
+    </userSettings>
+</configuration>

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Skyner.Server.admin.DataService" CodeBehind="DataService.svc.cs" %>

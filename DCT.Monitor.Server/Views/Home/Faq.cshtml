@@ -1,0 +1,27 @@
+﻿@using DCT.Monitor.Server.Helpers;
+
+@{
+    ViewBag.Title = "Faq";
+	ViewBag.CurrentMenuItem = "faq";
+}
+
+<div id="info">
+<p class="header">What is Monator?</p>
+	<ul>
+		
+		<li><p class="simplytext">
+			Monator is a service for monitoring of the sites in a real-time. If it is interesting for you to know what are users doing on your website, 
+			what pages do they visit and where are they coming from, our service is especially for you.
+		</p></li>
+	</ul>
+	<br />
+	<p class="header">How to use Monator?</p>
+	<ul>
+		<li><p class="simplytext">1. @Url.Register().AsLink("Sign up") and then @Url.Logon().AsLink("Sign in");</p></li>
+		<li><p class="simplytext">2. At @Url.MyHome().AsLink("Myhome") page choose <b>“Viewing of your domains”</b> and add your site to the list;</p></li>
+		<li><p class="simplytext">3. Copy the script link, that will be formed and paste it into your site’s code;</p></li>
+		<li><p class="simplytext">4. @Url.Downloads().AsLink("Download") one of the Monator’s clients, install it and login there using credentials you left while signing up on the site.</p></li>
+		<li><p class="simplytext">After doing this simple steps you can monitor your site in a real-time with Monator.</p></li>
+	</ul>
+</div>
+

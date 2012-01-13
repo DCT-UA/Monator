@@ -1,0 +1,78 @@
+﻿@model DCT.Monitor.Server.Models.JsonpRequestModel
+
+@{
+    Layout = null;
+	Response.Clear();
+	Response.ContentType = "text/javascript";
+
+    // render script tag to enable js intellisence but comment it with 
+    var cstart = new MvcHtmlString("<!-" + "-");
+	var cend = new MvcHtmlString("-->");
+}
+
+@cstart <script type="text/javascript"> @cend
+
+if(typeof(_monator_core) == "undefined"){
+	_monator_core = {
+		delay: 0,
+		host: "@Request.Url.Host",
+		siteid: "@Model.SiteId",
+		referer: escape(document.referrer),
+		url: escape(document.location),
+		requestId: null,
+		sessionId: null,
+		lastDate: new Date(),
+
+		init: function (data) {
+			this.requestId = data.id;
+			this.sessionId = data.session;
+			this.delay = data.delay;
+
+			var $this = this;
+
+			var loop = function(){
+				$this.ping({callback: "_monator_core.tick", jsonAction: "tick"});
+				setTimeout(loop, $this.delay * 1000);
+			}
+
+			setTimeout(loop, $this.delay * 1000);
+		},
+
+		tick: function(data){
+			this.delay = data.delay;
+		},
+
+		getDuration: function(){
+			var newDate = new Date();
+			return Math.round((newDate - this.lastDate) / 1000);
+		},
+
+		ping: function(params){
+			params.siteid = this.siteid;
+			params.rnd = Math.random();
+			params.url = this.url;
+			params.referer = this.referer;
+			params.requestId = this.requestId;
+			params.sessionId = this.sessionId;
+			params.duration = this.getDuration();
+
+			var src = "http://" + this.host + "/service/jsonp";
+			var delimiter = "?";
+			for(var key in params){
+				if(params[key] == null) continue;
+
+				src += delimiter + key + "=" + params[key];
+				delimiter = "&";
+			}
+
+			var m = document.createElement("script"); m.type = "text/javascript"; m.async = true;
+			m.src = src;
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(m, s);
+		}
+	};
+
+	_monator_core.ping({callback: "_monator_core.init", jsonAction: "init"});
+}
+
+@cstart </script> @cend

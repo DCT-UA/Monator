@@ -1,0 +1,201 @@
+﻿@model DCT.Monitor.Server.Models.SiteListModel
+@using DCT.Monitor.Server.Helpers;
+@{
+	ViewBag.Title = "Monator - My Pages - Sites";
+	ViewBag.CurrentMenuItem = "myhome";
+	Layout = @"~/Views/Shared/_MyHomeLayout.cshtml";
+}
+<div id="form" class="singleSite">
+    <div class="signin" style="width: 700px; margin: 0 auto">
+        @if (Model.Sites == null || Model.Sites.Count == 0)
+        {
+            <div>
+                Your domain list is empty!</div>
+        }
+        else
+        {
+            foreach (var site in Model.Sites)
+            {
+                var id = site.Id + "_input";
+				
+		<article class="domain">
+			<div class="header">
+				<h3>Site's domain pattern: @site.Domain</h3>
+			</div>
+
+			<div class="script">
+				<div style="width: 100px; float: left;"><span>Script link</span></div>
+
+				<div class="scriptText field">
+					<div class="border">
+						@Html.TextBox(id, Url.StringScript(site.Id.ToString()), new { id, Class = "script", Style="width:95%" })
+					</div>
+				</div>
+
+				<div class="scriptLink"><a id="@(site.Id)" class="copy-dynamic blue button siteButton">Copy</a></div>
+			</div>
+			<div class="textnondashed buttons">
+				@Url.EditSite(site).AsLink("Change domain", "edit blue button siteLongButton")
+				@Url.Pages(site.Id).AsLink("Pages", "blue button pages siteButton")
+				@Url.DeleteSite(site).AsLink("Delete", "delete orange button siteButton")
+			</div>
+		</article>
+			
+			}
+		}
+	</div>
+
+    @using (Html.BeginForm("Sites", "SiteManager", FormMethod.Post, new { style = "width: 700px; margin: 0 auto" }))
+	{
+		<br />
+		<fieldset class="domain">
+            <div class="script">
+				<div style="width: 140px; float: left;"><span>Site's Domain:</span></div>
+				
+                <div class="scriptText field http">
+                    <label>http://</label>
+                    <div class="border">
+                        @Html.TextBoxFor(m => m.SiteModel.Domain, new { Class = "long" })
+                    </div>@*<div style="float:right; margin-bottom:30px;">/</div>*@
+                </div>
+				<input id="createclean" type="submit" class="button orange zero-margin" value="Add a new site" />
+            </div>
+            <div class="fieldBox">
+                <div class="error">
+                    @Html.ValidationMessageFor(m => m.SiteModel)
+                </div>
+            </div>
+            
+            <br />
+@*<div class="fieldBox">
+				<label for="domain">Track subdomains?</label>
+				@Html.CheckBoxFor(m => m.SiteModel.IgnoreSubdomains)
+			</div>*@
+		</fieldset>
+	}
+</div>
+<div style="display: none">
+    <div id="editform">
+        @{Html.RenderPartial("EditUserControl");}
+    </div>
+</div>
+<script type="text/javascript">
+    $("a.delete").click(function (e) {
+        var message = "Do you really want to delete this domain?"
+        return confirm(message);
+    });		
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        // The link with ID "copy-dynamic" will copy the current value
+        // of a dynamically changing input with the ID "very tribble id :)"
+        $('a.copy-dynamic').zclip({
+            path: '/Scripts/ZeroClipboard.swf',
+            copy: function () {
+                return $("#" + this.attr("id") + "_input").val();
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+
+    // Add this behavior to all text fields
+    $("input[type=text]").focus(function () {
+        // Select field contents
+        var $this = this;
+
+        setTimeout(function () {
+            $this.select();
+        }, 200);
+    });
+	
+</script>
+<script type="text/javascript">
+    $(function () {
+        var editdlg = $('#editform');
+        //name of domain in text box
+        var domain = $("input[type=text].edit");
+        allFields = $([]).add(domain);
+        //field for error
+        tips = $(".validateTips");
+        var currentDomain;
+
+        //display error
+        function updateTips(t) {
+            tips
+				.text(t)
+				.addClass("ui-state-highlight");
+            setTimeout(function () {
+                tips.removeClass("ui-state-highlight", 1500);
+            }, 500);
+        }
+
+        function checkLength(o, n, min, max) {
+            if (o.val().length > max || o.val().length < min) {
+                o.addClass("ui-state-error");
+                updateTips("Length of " + n + " must be between " +
+					min + " and " + max + ".");
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        function checkRegexp(o, regexp, n) {
+            if (!(regexp.test(o.val()))) {
+                o.addClass("ui-state-error");
+                updateTips(n);
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        editdlg.dialog({
+            modal: true,
+            autoOpen: false,
+            buttons: {
+                'Save': function () {
+                    var bValid = true;
+
+                    bValid = bValid && checkLength(domain, "domain", 5, 256);
+                    bValid = bValid && checkRegexp(domain, /([\w-\*]+\.)*[\w-\*]+$/,
+										"The domain name provided is invalid. Please check the value and try again.");
+                    if (bValid) {
+                        $(this).dialog("close");
+                        $(this).find("form")[0].submit();
+                    }
+                },
+                'Cancel': function () {
+                    allFields.val("").removeClass("ui-state-error");
+                    tips.text("");
+                    $(this).dialog("close");
+                }
+            },
+            title: 'Edit domain',
+            minHeight: 200,
+            minWidth: 250,
+            maxHeight: 300,
+            maxWidth: 350
+        });
+
+        $(".edit").click(function (e) {
+            return false;
+        });
+        $(".edit").click(function (e) {
+            var target = $(e.target);
+            var td = target.parent();
+            var domain = td.find("input")[0].value;
+            //var trackSubdomains = td.find("input")[1].value;
+
+            currentDomain = target.attr("href").match(/[0-9a-fA-F-]{36}/)[0];
+
+            editdlg.find("input")[0].value = domain;
+            //TODO: Tracking
+            //editdlg.find("input")[1].checked = trackSubdomains.toLowerCase() == "true";
+            editdlg.find("input")[1/*3*/].value = currentDomain;
+            editdlg.dialog('open');
+            return false;
+        });
+    });
+</script>

@@ -1,0 +1,23 @@
+﻿@using DCT.Monitor.Server.Helpers
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@ViewBag.Title</title>
+	<link href="@Url.Content("~/Content/style_new.css")" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+      <div id="logo"><a href="@Url.Home().AsUrl()"><img src="@Url.Content("~/Content/img/logo-beta.png")" alt=Logo"" /></a></div>
+
+      @RenderBody()
+    </div>
+
+    @RenderSection("scripts")
+</body>
+</html>

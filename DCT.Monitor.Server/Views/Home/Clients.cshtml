@@ -1,0 +1,30 @@
+﻿@using DCT.Monitor.Server.Helpers;
+
+@{
+    ViewBag.Title = "Downloads";
+    ViewBag.IsLeftMenuVisible = false;
+	ViewBag.CurrentMenuItem = "downloads";
+}
+<div id="info">
+<div style="width: 60%; margin: 0 auto">
+	<div>
+		<div class="image">
+			 <img src="@Url.Content("~/Content/img/img1.png")" alt="" title="" width="230px" />
+		</div>
+		<div style="font-size: 16px;">
+			<b>Client for Windows</b>
+		</div> <br />
+		<div>
+			One click to download a desktop client for Monator to always know about users’ activity on your site using Monator from your computer.
+		</div>
+		<br />
+		<div style="text-align:right">
+			<a class="button orange noline" href="/distributives/win/setup.exe">Download@*<input type="button" class="button orange" value="Download" />*@</a>
+			<span>   </span>
+			@*<a href="#">Details...</a> *@
+		</div>
+		<div class="clear"></div>
+	</div>
+	<br />
+</div>
+</div>

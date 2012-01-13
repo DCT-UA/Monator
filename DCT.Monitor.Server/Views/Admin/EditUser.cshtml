@@ -1,0 +1,41 @@
+﻿@using DCT.Monitor.Server.Helpers
+
+@{
+    ViewBag.Title = "EditUser";
+    Layout = @"~/Views/Shared/_Layout.cshtml";
+}
+@model List<DCT.Monitor.Entities.Site>
+<h2>EditUser</h2>
+<div id="form" class="signleSite">
+<fieldset class="signin">
+	@if (Model == null || Model.Count == 0)
+	{
+		<div>Domain list is empty!</div>
+	}
+	else
+	{	
+		<table class="adminka" border="1">
+			<tr>				
+				<th>User sites</th>
+			</tr>
+			 
+			 @foreach (var site in Model)
+			 {
+        			 using(Html.BeginForm("EditSite","Admin",FormMethod.Post))
+                     {
+				        <tr>
+					        <td class="adminka">
+						         @Html.TextBox("Domain_"+site.Id, site.Domain,"width:170px;")
+                                 @Html.Hidden("id", site.Id)
+					        </td>
+					        <td>
+						        <input type="submit" value="Update" class="edit blue button siteButton" />
+					        </td>
+				        </tr>
+                    }
+			 }
+		</table>
+    
+    }
+	</fieldset>
+</div>

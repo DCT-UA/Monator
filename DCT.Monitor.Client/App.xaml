@@ -1,0 +1,15 @@
+﻿<Application x:Class="DCT.Monitor.Client.App"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mvcc="clr-namespace:DCT.WPF.MVC.Controls;assembly=DCT.WPF"
+             xmlns:mydata="clr-namespace:DCT.Monitor.Client.Helpers" StartupUri="MainWindow.xaml">
+	<Application.Resources>
+		<ResourceDictionary>
+			<mydata:RequestCounter x:Key="RequestCounter" />
+			<mydata:TreeViewItemFormatter x:Key="TreeViewItemFormatter" />
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>

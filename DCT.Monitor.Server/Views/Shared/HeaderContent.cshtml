@@ -1,0 +1,69 @@
+﻿ @using DCT.Monitor.Server.Helpers;
+ @using DCT.Monitor.Server.Controllers;
+
+ @if (Request.IsAuthenticated)
+ { 
+	<ul>
+		<li>You are logined as @Model.Session.User.UserName</li>
+		<li> | </li>
+		<li>@Url.Logoff().AsLink("Exit", "signin")</li>
+
+	</ul>
+    
+ }
+ else
+ {
+	 using (Html.BeginForm("Autorisation", "Home", FormMethod.Post, new { @class = "form", name = "form" }))
+	 {
+		<ul>
+@*			<li>
+			<a class="noline" href="@Url.Logon("google").AsUrl()" title="Facebook">
+				<img src="@Url.Content("~/Content/img/facebook_16.png")" alt="" />
+			</a>
+			</li>*@
+			<li>
+				<a class="noline" href="@Url.Logon("twitter").AsUrl()" title="Twitter">
+					<img src="@Url.Content("~/Content/img/twitter_16.png")" alt="" />
+				</a>
+			</li>
+			<li>
+				<a class="noline" href="@Url.Logon("google").AsUrl()" title="Google">
+					<img src="@Url.Content("~/Content/img/google_16.png")" alt="" />
+				</a>
+			</li>
+			<li>
+				<a class="noline" href="@Url.Logon("linkedin").AsUrl()" title="LinkedIn">
+					<img src="@Url.Content("~/Content/img/linkedin_16.png")" alt="" />
+				</a>
+			</li>
+			<li>
+				<a class="noline" href="@Url.Logon("myspace").AsUrl()" title="MySpace">
+					<img src="@Url.Content("~/Content/img/myspace_16.png")" alt="" />
+				</a>
+			</li>
+			<li>
+				<a class="noline" href="@Url.Logon("vkontakte").AsUrl()" title="Vkontakte">
+					<img src="@Url.Content("~/Content/img/vkontakte_16.png")" alt="" />
+				</a>
+			</li>
+			<li class="text"><a href="@Url.Logon().AsUrl()" title="">Sign in</a> </li>
+			<li> | </li>
+			<li class="text"><a href="@Url.Register().AsUrl()" title="">Sign up</a></li>
+		</ul>
+	 }
+ }
+<script type="text/javascript">
+	function PostAuth(path) {
+		document.forms["form"].action = "/Account/Logon?site=" + path;
+		document.forms["form"].method = "post";
+		document.forms["form"].submit();
+	}
+</script>
+@*<script type="text/javascript">
+	function RedirToReg(path) {
+		document.forms["form"].action = "/Account/Logon?site=" + path;
+		document.forms["form"].method = "post";
+		//ViewBag.Path = "?site=" + path;
+		document.forms["form"].submit();
+	}
+</script>*@

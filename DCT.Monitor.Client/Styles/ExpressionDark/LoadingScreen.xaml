@@ -1,0 +1,92 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+					xmlns:mydata="clr-namespace:Inetgiant.Monitor.Client"
+					xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" 
+					xmlns:mvcc="clr-namespace:DCT.WPF.MVC.Controls;assembly=DCT.WPF"
+					xmlns:models="clr-namespace:Inetgiant.Monitor.Client.Models">
+	<ControlTemplate x:Key="LoadingScreenTemplate" TargetType="mvcc:SplashScreen">
+		<Grid x:Name="LayoutRoot" Background="White">
+			<Grid.Resources>
+				<Storyboard x:Key="LoadingStoryboard" RepeatBehavior="Forever">
+					<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Offset)" Storyboard.TargetName="rectangle">
+						<EasingDoubleKeyFrame KeyTime="0" Value="0.542"/>
+						<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.066"/>
+						<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0.747"/>
+					</DoubleAnimationUsingKeyFrames>
+					<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Offset)" Storyboard.TargetName="rectangle">
+						<EasingDoubleKeyFrame KeyTime="0" Value="0.766"/>
+						<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.107"/>
+						<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0.805"/>
+					</DoubleAnimationUsingKeyFrames>
+					<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Offset)" Storyboard.TargetName="rectangle">
+						<EasingDoubleKeyFrame KeyTime="0" Value="0.873"/>
+						<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.157"/>
+						<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0.855"/>
+					</DoubleAnimationUsingKeyFrames>
+					<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[4].(GradientStop.Offset)" Storyboard.TargetName="rectangle">
+						<EasingDoubleKeyFrame KeyTime="0" Value="0.922"/>
+						<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.243"/>
+						<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0.915"/>
+					</DoubleAnimationUsingKeyFrames>
+					<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[5].(GradientStop.Offset)" Storyboard.TargetName="rectangle">
+						<EasingDoubleKeyFrame KeyTime="0" Value="0.943"/>
+						<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.329"/>
+						<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0.945"/>
+					</DoubleAnimationUsingKeyFrames>
+					<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+						<EasingColorKeyFrame KeyTime="0" Value="#FF59DCFF"/>
+						<EasingColorKeyFrame KeyTime="0:0:2" Value="#FFAAEDFF"/>
+					</ColorAnimationUsingKeyFrames>
+					<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.StrokeThickness)" Storyboard.TargetName="rectangle">
+						<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+						<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+						<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+					</DoubleAnimationUsingKeyFrames>
+					<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Color)" Storyboard.TargetName="textBlock">
+						<EasingColorKeyFrame KeyTime="0" Value="Black"/>
+						<EasingColorKeyFrame KeyTime="0:0:2" Value="White"/>
+						<EasingColorKeyFrame KeyTime="0:0:4" Value="Black"/>
+					</ColorAnimationUsingKeyFrames>
+				</Storyboard>
+			</Grid.Resources>
+			<Grid.Triggers>
+				<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+					<BeginStoryboard Storyboard="{StaticResource LoadingStoryboard}"/>
+				</EventTrigger>
+			</Grid.Triggers>
+			<Rectangle x:Name="rectangle" HorizontalAlignment="Center" Height="40" Stroke="Black" VerticalAlignment="Center" Width="500" RadiusX="40" RadiusY="20">
+				<Rectangle.OpacityMask>
+					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+						<GradientStop Offset="0" Color="#99FFFFFF"/>
+						<GradientStop Color="#99FFFFFF" Offset="1"/>
+						<GradientStop Color="White" Offset="0.15"/>
+						<GradientStop Color="#E5FFFFFF" Offset="0.85"/>
+					</LinearGradientBrush>
+				</Rectangle.OpacityMask>
+				<Rectangle.Fill>
+					<LinearGradientBrush EndPoint="0,0.5" StartPoint="1,0.5">
+						<GradientStop Offset="0"/>
+						<GradientStop Color="White" Offset="0.542"/>
+						<GradientStop Color="White" Offset="0.766"/>
+						<GradientStop Color="#FFAAEDFF" Offset="0.873"/>
+						<GradientStop Color="White" Offset="0.922"/>
+						<GradientStop Color="White" Offset="0.943"/>
+						<GradientStop Offset="1"/>
+					</LinearGradientBrush>
+				</Rectangle.Fill>
+			</Rectangle>
+			<TextBlock x:Name="textBlock" Text="{Binding LoadingContent}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,100" TextWrapping="Wrap" TextAlignment="Right">
+			<TextBlock.Effect>
+				<DropShadowEffect/>
+			</TextBlock.Effect>
+			<TextBlock.Foreground>
+				<RadialGradientBrush  GradientOrigin="0.5,0.5" Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
+					<GradientStop Color="White"/>
+					<GradientStop Color="#FF59DCFF" Offset="1"/>
+				</RadialGradientBrush>
+			</TextBlock.Foreground>
+			</TextBlock>
+		</Grid>
+	</ControlTemplate>
+</ResourceDictionary>

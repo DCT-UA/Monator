@@ -1,0 +1,19 @@
+﻿@using DCT.Monitor.Server.Controllers
+@using DCT.Monitor.Server.Helpers
+@{
+	Layout = @"~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="infoSite">
+	<div class="verticalMenu">
+		<ul>
+			<li>@Url.Sites().AsLink("Viewing of your domains")</li>
+			<li><br /></li>
+			<li>@Url.ChangePassword().AsLink("Change password")</li>
+			<li><br /></li>
+			<li>@Url.AccountBinding().AsLink("Change your social binding")</li>
+		</ul>
+	</div>
+		
+	@RenderBody()
+</div>
