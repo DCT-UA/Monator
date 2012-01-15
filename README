@@ -1,0 +1,49 @@
+Description
+Monator is an application that allows real-time tracking of the number of active users on your site. The system can handle hundreds and hundreds requests per second and allows you an opportunity for tracking the pages, opened by the user, the user's browser and the time spent by the user on the page. This application allows you to monitor the statistics as on one site and at the same time to observe the unlimited number of projects.
+
+What You Get
+1. Monator allows us to observe the number of visitors in real time.
+2. It creates statistics, shows how many and which pages are opened by each user.
+3. It has an ability to track visitors in registered domains and in each of them separately is included.
+4. It has an opportunity for tracking changes on your mobile phone.
+5. It displays the IP address of each user.
+6. It counts and shows the length of user’s staying on the page.
+7. It shows which browser the user is using for serfing.
+8. It counts each unique user.
+
+Monator projects:
+1) Client – wpf- application to observe users.
+2) DAL – layer for working with database.
+3) Entities – data model.
+4) Modules –module’s interfaces.
+5) Modules.Implementation – an implementation of business logic modules: the processing of requests jsonp, parsing, the counting the number of users, the caching mechanism.
+6) Server – web site and services.
+7) ServiceDataSource – json-client for the wpf-application.
+8) StreamInsight – business logic of the request’s processing of StreamInsight.
+9) Observable – additional classes for working with  StreamInsight observable.
+
+
+Prerequirements:
+1.	Install the StreamInsight’s server.
+2.	Create the data base. (open and execute script is in “Scripts\CreateDB.sql”)
+Change the name StreamInsight instance in “Unity.config.” (the default setting is “StreamInsight”)
+<register type="QueriesCore">
+	<lifetime type="singleton" />
+	<constructor>
+		<param name="instance" value="StreamInsight" />
+		<param name="distinctNeeded" value="false" />
+	</constructor>
+</register>
+3.	Change the connection settings to the data base in “Unity.config”.
+<register type="ISqlConnector" mapTo="SqlConnector">
+	<lifetime type="singleton" />
+	<constructor>
+		<param name="connectionString" value="Data Source=.;Initial Catalog=MonitorDB;User ID=sa;Password=password" />
+	</constructor>
+</register>
+	
+4.	Configure the Web-site in IIS. (DCT.Monitor.Server project)
+5.	Select domen, the newly installed site, in the section “appSettings”(the default setting is “monator.net”). 
+	<add key="domain" value="monator.net"/> â ôàéëå Web.Config ïðîåêòà DCT.Monitor.Server è â ôàéëå App.config ïðîåêòà DCT.Monitor.Client.
+6.	To send an e-mail, you need to 
+	<!--<network host="" userName="" password="" />--> uncomment this line in the file “Web.Config”, which is in the project “DCT.Monitor.Server” and finally set up validate setting of  the mail server.( It is necessary for successful operation of password’s restoring)
